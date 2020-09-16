@@ -63,11 +63,22 @@ The following sections list information provided by the client about `items` and
 - If the item enhancement level is 20, the enhancement level is not changed.
 - The durability of the item is not changed.
 
+{
+  name: 'string',
+  enhancesment: number, + 1 <= 20
+  durability: number, 0-100
+}
+
 ### When enhancement fails
 
 - If the item's enhancement is less than 15, the durability of the item is decreased by 5.
 - If the item's enhancement is 15 or more, the durability of the item is decreased by 10.
 - If the item's enhancement level is greater than 16, the enhancement level decreases by 1 (17 goes down to 16, 18 goes down to 17).
+{
+  name: 'string',
+  enhancesment: number, if(enhance < 15){ durability - 5}, else if (enhance > 15 && enhance < 17>){ durability - 10} else if (ehance > 16){ enhance - 1, durability - 10}
+  durability: number, 0-100
+}
 
 ## Stretch Problem
 
